@@ -40,13 +40,15 @@ class ExtensibleCustomError extends Error {
 
       const newEntries = [];
 
-      for (const entry of entriesToMerge) {
+      entriesToMerge.forEach((entry) => {
         if (baseEntries.includes(entry)) {
-          return [...newEntries, ...baseEntries].join('\n');
+          return;
         }
 
         newEntries.push(entry);
-      }
+      });
+
+      return [...newEntries, ...baseEntries].join('\n');
     };
 
     if (Error.hasOwnProperty('captureStackTrace')) {
