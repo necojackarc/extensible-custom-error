@@ -1,16 +1,29 @@
 # Extensible Custom Error
 JavaScript extensible custom error that can take a message and/or an Error object
 
+## Contents
+
+* [Notable Features](#notable-features)
+  * [Define custom errors easily](#define-custom-errors-easily)
+  * [Wrap errors without losing any data](#wrap-errors-without-losing-any-data)
+* [Usage](#usage)
+  * [Define custom errors](#define-custom-errors)
+  * [Instantiate custom errors](#instantiate-custom-errors)
+* [Examples](#examples)
+  * [Wrap an error](#wrap-an-error)
+  * [Wrap an error while passing a new message](#wrap-an-error-while-passing-a-new-message)
+* [Special Thanks](#special-thanks)
+
 ## Notable Features
 There are some pains around JavaScript error handling.
 Two of them are:
 
-1. Define your custom errors
+1. Define custom errors easily
 2. Wrap errors without losing any data
 
 This `ExtensibleCustomError` class enables you to do both - you can define your custom errors easily and wrap errors with them while merging stack traces prettily.
 
-### Define your custom errors
+### Define custom errors easily
 To define custom errors in Vanilla JS, you need to set names and stack traces manually, but you no longer need to do that with `ExtensibleCustomError`.
 
 ```js
