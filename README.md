@@ -17,6 +17,7 @@ new MyError('message', error); // Take a message and an error
 * [Notable Features](#notable-features)
   * [Define custom errors easily](#define-custom-errors-easily)
   * [Wrap errors without losing any data](#wrap-errors-without-losing-any-data)
+* [Installation](#installation)
 * [Usage](#usage)
   * [Define custom errors](#define-custom-errors)
   * [Instantiate custom errors](#instantiate-custom-errors)
@@ -59,19 +60,33 @@ catch (error) {
 }
 ```
 
+## Installation
+
+Using npm:
+
+```bash
+$ npm install extensible-custom-error
+```
+
+Using Yarn:
+
+```bash
+$ yarn add extensible-custom-error
+```
+
 ## Usage
 
 ### Define custom errors
 ```js
-const BaseError = require('extensible_custom_error');
+const ExtensibleCustomError = require('extensible-custom-error');
 
 // That's it!
-class MyError extends BaseError {}
+class MyError extends ExtensibleCustomError {}
 ```
 
 ```js
 // Should you need to set custom properties
-class MyErrorWithCustomProperty extends BaseError {
+class MyErrorWithCustomProperty extends ExtensibleCustomError {
   constructor(...args) {
     // Ensure calling the super constructor
     super(...args);
@@ -118,6 +133,10 @@ try {
 If you run:
 
 ```js
+const ExtensibleCustomError = require('extensible-custom-error');
+
+class MyError extends ExtensibleCustomError {}
+
 function throwBuiltinError() {
   throw new Error('Unknown to Death, Nor known to Life');
 }
@@ -164,6 +183,10 @@ Error: Unknown to Death, Nor known to Life
 If you run:
 
 ```js
+const ExtensibleCustomError = require('extensible-custom-error');
+
+class MyError extends ExtensibleCustomError {}
+
 function throwBuiltinError() {
   throw new Error('Have withstood Pain to create many Weapons');
 }
