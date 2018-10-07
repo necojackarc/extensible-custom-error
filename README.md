@@ -1,6 +1,7 @@
 # Extensible Custom Error
 [![npm version](https://badge.fury.io/js/extensible-custom-error.svg)](https://badge.fury.io/js/extensible-custom-error)
 [![Build Status](https://travis-ci.com/necojackarc/extensible-custom-error.svg?branch=master)](https://travis-ci.com/necojackarc/extensible-custom-error)
+[![Coverage Status](https://coveralls.io/repos/github/necojackarc/extensible-custom-error/badge.svg?branch=master)](https://coveralls.io/github/necojackarc/extensible-custom-error?branch=master)
 
 JavaScript extensible custom error that can take a message and/or an Error object
 
