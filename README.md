@@ -1,6 +1,14 @@
 # Extensible Custom Error
 JavaScript extensible custom error that can take a message and/or an Error object
 
+```js
+class MyError extends ExtensibleCustomError {}
+
+new MyError('message'); // Take a message
+new MyError(error); // Take an error
+new MyError('message', error); // Take a message and an error
+```
+
 ## Contents
 
 * [Notable Features](#notable-features)
