@@ -4,6 +4,7 @@
   "description": "JavaScript extensible custom error that can take a message and/or an Error object",
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint src test",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/necojackarc/extensible-custom-error/issues"
   },
-  "homepage": "https://github.com/necojackarc/extensible-custom-error#readme"
+  "homepage": "https://github.com/necojackarc/extensible-custom-error#readme",
+  "devDependencies": {
+    "eslint": "^5.6.1"
+  }
 }
