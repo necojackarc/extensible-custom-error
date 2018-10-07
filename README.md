@@ -1,4 +1,6 @@
 # Extensible Custom Error
+[![npm version](https://badge.fury.io/js/extensible-custom-error.svg)](https://badge.fury.io/js/extensible-custom-error)
+
 JavaScript extensible custom error that can take a message and/or an Error object
 
 ```js
