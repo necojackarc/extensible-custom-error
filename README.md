@@ -16,7 +16,7 @@ new MyError('message', error); // Take a message and an error
 
 ## Contents
 
-* [Notable Features](#notable-features)
+* [Features](#features)
   * [Define custom errors easily](#define-custom-errors-easily)
   * [Wrap errors without losing any data](#wrap-errors-without-losing-any-data)
 * [Installation](#installation)
@@ -29,7 +29,7 @@ new MyError('message', error); // Take a message and an error
 * [Special Thanks](#special-thanks)
 * [License](#license)
 
-## Notable Features
+## Features
 
 There are some pains around JavaScript error handling.
 Two of them are:
