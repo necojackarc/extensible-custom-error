@@ -1,0 +1,16 @@
+
+
+; ==== Format of the commit message ====
+; <type>(<scope>) <subject>
+;
+; <body>
+
+; ==== Emoji list for the type ====
+; :tada:              adding new features
+; :bug:               fixing broken code (bugs we're proud to solve)
+; :flushed:           embarrassing bug fixes
+; :white_check_mark:  grunt work (non-feature and non-bugfix tasks)
+; :memo:              adding or maintaining documentation
+; :hammer_and_wrench: writing or fixing tests
+; :cherry_blossom:    refactoring code or improving code-style
+; :art:               improving the theming of the app

@@ -47,8 +47,6 @@ To define custom errors in Vanilla JS, you need to set names and stack traces ma
 class MyError extends ExtensibleCustomError {}
 ```
 
-N.B. With an uglifier, class names might get obsecure. See [this issue comment](https://github.com/bjyoungblood/es6-error/issues/31#issuecomment-301128220).
-
 ### Wrap errors without losing any data
 
 Built-in errors only take a message, so they can't wrap any errors, which means stack traces so far will be lost.
@@ -108,12 +106,14 @@ class MyErrorWithCustomProperty extends ExtensibleCustomError {
 }
 ```
 
+N.B. With an uglifier, class names might get obsecure. See [this issue comment](https://github.com/bjyoungblood/es6-error/issues/31#issuecomment-301128220).
+
 ### Instantiate custom errors
 
 You can instantiate your custom errors in the same way as built-in errors.
 
 ```js
-// Do it as usual!
+// Throw it as usual!
 throw new MyError('Steel is my Body and Fire is my Blood');
 ```
 
@@ -162,11 +162,11 @@ function main() {
   try {
     wrapErrorWithMyError();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
-main()
+main();
 ```
 
 you'll get:
@@ -212,11 +212,11 @@ function main() {
   try {
     wrapErrorWithMyError();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
-main()
+main();
 ```
 
 you'll get:
