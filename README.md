@@ -1,4 +1,5 @@
 # Extensible Custom Error
+
 [![npm version](https://badge.fury.io/js/extensible-custom-error.svg)](https://badge.fury.io/js/extensible-custom-error)
 [![Build Status](https://travis-ci.com/necojackarc/extensible-custom-error.svg?branch=master)](https://travis-ci.com/necojackarc/extensible-custom-error)
 [![Coverage Status](https://coveralls.io/repos/github/necojackarc/extensible-custom-error/badge.svg?branch=master)](https://coveralls.io/github/necojackarc/extensible-custom-error?branch=master)
@@ -26,8 +27,10 @@ new MyError('message', error); // Take a message and an error
   * [Wrap an error](#wrap-an-error)
   * [Wrap an error while passing a new message](#wrap-an-error-while-passing-a-new-message)
 * [Special Thanks](#special-thanks)
+* [License](#license)
 
 ## Notable Features
+
 There are some pains around JavaScript error handling.
 Two of them are:
 
@@ -37,6 +40,7 @@ Two of them are:
 This `ExtensibleCustomError` class enables you to do both - you can define your custom errors easily and wrap errors with them while merging stack traces prettily.
 
 ### Define custom errors easily
+
 To define custom errors in Vanilla JS, you need to set names and stack traces manually, but you no longer need to do that with `ExtensibleCustomError`.
 
 ```js
@@ -46,6 +50,7 @@ class MyError extends ExtensibleCustomError {}
 N.B. With an uglifier, class names might get obsecure. See [this issue comment](https://github.com/bjyoungblood/es6-error/issues/31#issuecomment-301128220).
 
 ### Wrap errors without losing any data
+
 Built-in errors only take a message, so they can't wrap any errors, which means stack traces so far will be lost.
 However, `ExtensibleCustomError` can take a message and/or an Error object while merging stack traces.
 
@@ -78,6 +83,7 @@ $ yarn add extensible-custom-error
 ## Usage
 
 ### Define custom errors
+
 ```js
 const ExtensibleCustomError = require('extensible-custom-error');
 
@@ -103,6 +109,7 @@ class MyErrorWithCustomProperty extends ExtensibleCustomError {
 ```
 
 ### Instantiate custom errors
+
 You can instantiate your custom errors in the same way as built-in errors.
 
 ```js
@@ -131,6 +138,7 @@ try {
 ## Examples
 
 ### Wrap an error
+
 If you run:
 
 ```js
@@ -230,5 +238,10 @@ Error: Have withstood Pain to create many Weapons
 ```
 
 ## Special Thanks
+
 * [@yszk0123](https://github.com/yszk0123) as a reviewer
 * [bjyoungblood/es6-error](https://github.com/bjyoungblood/es6-error) as a reference
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
