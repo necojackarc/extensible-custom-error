@@ -1,0 +1,22 @@
+{
+  "name": "extensible-custom-error",
+  "version": "0.0.1",
+  "description": "JavaScript extensible custom error that can take a message and/or an Error object",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/necojackarc/extensible-custom-error.git"
+  },
+  "keywords": [
+    "error"
+  ],
+  "author": "necojackarc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/necojackarc/extensible-custom-error/issues"
+  },
+  "homepage": "https://github.com/necojackarc/extensible-custom-error#readme"
+}
