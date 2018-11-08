@@ -1,27 +1,17 @@
 'use strict';
 
 class ExtensibleCustomError extends Error {
-  constructor(...args) {
+  constructor(message, ...args) {
     let errorToWrap;
-    let message;
-    let restOfArgs;
 
-    if (args[0] instanceof Error) {
+    if (message instanceof Error) {
+      errorToWrap = message;
+    } else if (args[0] instanceof Error) {
       errorToWrap = args[0];
-      message = errorToWrap.toString();
-      restOfArgs = args.slice(1);
-    } else if (args[1] instanceof Error) {
-      errorToWrap = args[1];
-      message = args[0];
-      restOfArgs = args.slice(2);
-    } else {
-      message = args[0];
-      restOfArgs = args.slice(1);
+      args.shift();
     }
 
-    const stackTraceSoFar = errorToWrap ? errorToWrap.stack : undefined;
-
-    super(...[message, ...restOfArgs]);
+    super(message, ...args);
 
     // Align with Object.getOwnPropertyDescriptor(Error.prototype, 'name')
     Object.defineProperty(this, 'name', {
@@ -31,6 +21,7 @@ class ExtensibleCustomError extends Error {
       writable: true,
     });
 
+    // Helper function to merge stack traces
     const mergeStackTrace = (stackTraceToMerge, baseStackTrace) => {
       if (!baseStackTrace) {
         return stackTraceToMerge;
@@ -52,6 +43,8 @@ class ExtensibleCustomError extends Error {
       return [...newEntries, ...baseEntries].join('\n');
     };
 
+    const stackTraceSoFar = errorToWrap ? errorToWrap.stack : undefined;
+
     if (Error.hasOwnProperty('captureStackTrace')) {
       Error.captureStackTrace(this, this.constructor);
       this.stack = mergeStackTrace(this.stack, stackTraceSoFar);
@@ -64,12 +57,7 @@ class ExtensibleCustomError extends Error {
     const stackTraceWithoutConstructors =
       [stackTraceEntries[0], ...stackTraceEntries.slice(3)].join('\n');
 
-    Object.defineProperty(this, 'stack', {
-      configurable: true,
-      enumerable: false,
-      value: mergeStackTrace(stackTraceWithoutConstructors, stackTraceSoFar),
-      writable: true,
-    });
+    this.stack = mergeStackTrace(stackTraceWithoutConstructors, stackTraceSoFar);
   }
 }
 
