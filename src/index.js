@@ -23,6 +23,7 @@ class ExtensibleCustomError extends Error {
 
     super(...[message, ...restOfArgs]);
 
+    // Align with Object.getOwnPropertyDescriptor(Error.prototype, 'name')
     Object.defineProperty(this, 'name', {
       configurable: true,
       enumerable: false,
