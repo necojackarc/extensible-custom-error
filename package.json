@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "description": "JavaScript extensible custom error that can take a message and/or an Error object",
   "main": "src/index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "lint": "eslint src test",
     "test": "nyc mocha test",
