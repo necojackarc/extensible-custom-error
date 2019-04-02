@@ -4,7 +4,7 @@
     "strict": true,
     "baseUrl": "../..",
     "paths": {
-      "extensible-custom-error": ["index.d.ts"]
+      "extensible-custom-error": ["types/index.d.ts"]
     }
   }
 }
