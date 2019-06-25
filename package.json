@@ -24,11 +24,11 @@
   "homepage": "https://github.com/necojackarc/extensible-custom-error#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "coveralls": "^3.0.2",
-    "eslint": "^5.6.1",
-    "mocha": "^5.2.0",
-    "nyc": "^13.0.1",
-    "typescript": "^3.4.1",
+    "coveralls": "^3.0.4",
+    "eslint": "^6.0.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "typescript": "^3.5.2",
     "typings-tester": "^0.3.2"
   }
 }
