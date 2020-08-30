@@ -10,9 +10,9 @@ describe('ExtensibleCustomError', function() {
     const className = 'MyError';
     const captureStackTrace = Error.captureStackTrace;
 
-    [true, false].forEach((isCaptureStackTraceAvailable) => {
-      const availability =
-        isCaptureStackTraceAvailable ? 'available' : 'unavailable';
+    [ true, false ].forEach((isCaptureStackTraceAvailable) => {
+      const availability
+        = isCaptureStackTraceAvailable ? 'available' : 'unavailable';
 
       context(`when captureStackTrace is ${availability}`, function() {
         before(function() {
