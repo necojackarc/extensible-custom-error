@@ -40,12 +40,12 @@ class ExtensibleCustomError extends Error {
         newEntries.push(entry);
       });
 
-      return [...newEntries, ...baseEntries].join('\n');
+      return [ ...newEntries, ...baseEntries ].join('\n');
     };
 
     const stackTraceSoFar = errorToWrap ? errorToWrap.stack : undefined;
 
-    if (Error.hasOwnProperty('captureStackTrace')) {
+    if (Object.prototype.hasOwnProperty.call(Error, 'captureStackTrace')) {
       Error.captureStackTrace(this, this.constructor);
       this.stack = mergeStackTrace(this.stack, stackTraceSoFar);
       return;
@@ -54,8 +54,8 @@ class ExtensibleCustomError extends Error {
     // This class is supposed to be extended, so the first two lines from
     // the second line are about error object constructors.
     const stackTraceEntries = new Error(message).stack.split('\n');
-    const stackTraceWithoutConstructors =
-      [stackTraceEntries[0], ...stackTraceEntries.slice(3)].join('\n');
+    const stackTraceWithoutConstructors
+      = [ stackTraceEntries[0], ...stackTraceEntries.slice(3) ].join('\n');
 
     this.stack = mergeStackTrace(stackTraceWithoutConstructors, stackTraceSoFar);
   }
