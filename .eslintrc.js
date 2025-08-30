@@ -61,4 +61,10 @@ module.exports = {
     'space-infix-ops': 'error',
     'spaced-comment': [ 'error', 'always', { block: { balanced: true } } ],
   },
+  overrides: [
+    {
+      files: [ './index.mjs' ],
+      parserOptions: { sourceType: 'module' },
+    },
+  ],
 };
