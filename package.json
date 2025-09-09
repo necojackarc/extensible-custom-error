@@ -1,6 +1,6 @@
 {
   "name": "extensible-custom-error",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "JavaScript extensible custom error that can take a message and/or an Error object",
   "main": "./index.cjs",
   "module": "./index.mjs",
