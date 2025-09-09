@@ -74,12 +74,6 @@ Using npm:
 $ npm install extensible-custom-error
 ```
 
-Using Yarn:
-
-```bash
-$ yarn add extensible-custom-error
-```
-
 ## Usage
 
 ### Define custom errors

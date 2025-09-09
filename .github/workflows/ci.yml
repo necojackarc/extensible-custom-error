@@ -16,21 +16,22 @@ jobs:
         node-version: [20.x, 22.x, 24.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
 
     - name: Install dependencies
-      run: yarn install
+      run: npm ci
 
     - name: Run linter and tests
       run: |
-        yarn lint
-        yarn test
-        yarn coverage
+        npm run lint
+        npm run test
+        npm run coverage
 
     - name: Send test coverage report to Coveralls
       uses: coverallsapp/github-action@master
