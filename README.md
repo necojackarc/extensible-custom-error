@@ -16,18 +16,20 @@ new MyError('message', error); // Take a message and an error
 
 ## Contents
 
-* [Features](#features)
-  * [Define custom errors easily](#define-custom-errors-easily)
-  * [Wrap errors without losing any data](#wrap-errors-without-losing-any-data)
-* [Installation](#installation)
-* [Usage](#usage)
-  * [Define custom errors](#define-custom-errors)
-  * [Instantiate custom errors](#instantiate-custom-errors)
-* [Examples](#examples)
-  * [Wrap an error](#wrap-an-error)
-  * [Wrap an error while passing a new message](#wrap-an-error-while-passing-a-new-message)
-* [Special Thanks](#special-thanks)
-* [License](#license)
+- [Extensible Custom Error](#extensible-custom-error)
+  - [Contents](#contents)
+  - [Features](#features)
+    - [Define custom errors easily](#define-custom-errors-easily)
+    - [Wrap errors without losing any data](#wrap-errors-without-losing-any-data)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Define custom errors](#define-custom-errors)
+    - [Instantiate custom errors](#instantiate-custom-errors)
+  - [Examples](#examples)
+    - [Wrap an error](#wrap-an-error)
+    - [Wrap an error while passing a new message](#wrap-an-error-while-passing-a-new-message)
+  - [Special Thanks](#special-thanks)
+  - [License](#license)
 
 ## Features
 
@@ -83,7 +85,10 @@ $ yarn add extensible-custom-error
 ### Define custom errors
 
 ```js
+// CommonJS
 const ExtensibleCustomError = require('extensible-custom-error');
+// ESM
+// import ExtensibleCustomError from 'extensible-custom-error';
 
 // That's it!
 class MyError extends ExtensibleCustomError {}
